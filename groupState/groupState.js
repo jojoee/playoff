@@ -1,28 +1,28 @@
 class Score {
-  constructor(win = 0, lose = 0, draw = 0) {
+  constructor (win = 0, lose = 0, draw = 0) {
     this.win = win
     this.lose = lose
     this.draw = draw
   }
 
-  setWin(score) {
+  setWin (score) {
     if (isNaN(score) || score < 0) return
     this.win = score
   }
 
-  setLose(score) {
+  setLose (score) {
     if (isNaN(score) || score < 0) return
     this.lose = score
   }
 
-  setDraw(score) {
+  setDraw (score) {
     if (isNaN(score) || score < 0) return
-    this.draw = draw
+    this.draw = score
   }
-} 
+}
 
 export class Team extends Score {
-  constructor(name = '', logo = '', win, lose, draw) {
+  constructor (name = '', logo = '', win, lose, draw) {
     super(win, lose, draw)
     this.name = name
     this.logo = logo
@@ -30,29 +30,30 @@ export class Team extends Score {
 }
 
 export default class Group {
-  constructor(name = '', teams = []) {
+  constructor (name = '', teams = []) {
     this._name = name
     this._teams = {}
-    teams.forEach(team => this._teams[team.name] = team)
+    teams.forEach(team => {
+      this._teams[team.name] = team
+    })
   }
 
-  getGroupName() {
+  getGroupName () {
     return this._name
   }
 
-  getTeams() {
+  getTeams () {
     const teams = Object.keys(this._teams).map(key => this._teams[key])
     return teams.sort((a, b) => b.win - a.win)
   }
 
-  setScore(type, teamName, score) {
+  setScore (type, teamName, score) {
     const team = this._teams[teamName]
     if (!team) return false
 
     switch (type) {
       case 'win':
-        if (this._teams[teamName]) 
-        this._teams[teamName].setWin(score)
+        if (this._teams[teamName]) { this._teams[teamName].setWin(score) }
         break
       case 'lose':
         this._teams[teamName].setLose(score)
@@ -64,5 +65,4 @@ export default class Group {
         break
     }
   }
-
 }
