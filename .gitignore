@@ -1,1 +1,8 @@
+# OS
 .DS_Store
+
+# compile
+dist
+
+# cache
+.cache
