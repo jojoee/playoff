@@ -1,8 +1,17 @@
 # OS
 .DS_Store
 
-# compile
+# Compile
 dist
 
-# cache
+# Cache
 .cache
+
+# Dependencies
+node_modules
+
+# Lock
+yarn.lock
+
+# Editor & IDE
+.vscode
