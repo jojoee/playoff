@@ -1,4 +1,5 @@
 import GroupState, { Team } from './groupState'
+import './index.scss'
 
 const groupA = new GroupState('Group A', [
   new Team('Team Liquid', 'https://liquipedia.net/commons/images/c/cd/Liquid2017logo_std.png', 13, 3),
@@ -19,10 +20,4 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('Group A', groupA.getGroupName(), groupA.getTeams())
   console.log('--------------------------------')
   console.log('Group B', groupB.getGroupName(), groupB.getTeams())
-
-  groupA.setScore('win', 'Team Liquid', 500)
-
-  // console.log('Group A', groupA.getGroupName(), groupA.getTeams())
-  // console.log('--------------------------------')
-  // console.log('Group B', groupB.getGroupName(), groupB.getTeams())
 })

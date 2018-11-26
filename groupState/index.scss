@@ -1,0 +1,23 @@
+@import "variable.scss";
+
+.playoff-table {
+  border-collapse: collapse;
+
+  tr {
+    background-color: $grayPrimary;
+  }
+  tr.success {
+    background-color: $greenPrimary;
+  }
+  tr.danger {
+    background-color: $redPrimary;
+  }
+
+  tr > th,
+  tr > td,
+  * > tr > th,
+  * > tr > td {
+    border: 1px solid $grayTertiary;
+    padding: 0.2em 0.4em;
+  }
+}
