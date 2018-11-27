@@ -19,6 +19,7 @@
 - [ ] semantic-release
 - [ ] test report
 - [ ] README.md
+- [ ] Add more Node.js version into CI
 
 ## Installation and example usage
 
