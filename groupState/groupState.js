@@ -30,12 +30,15 @@ export class Team extends Score {
 }
 
 export default class Group {
-  constructor (name = '', teams = []) {
+  constructor (element, name = '', winnerOrder, teams = []) {
+    this._element = element
     this._name = name
+    this._winnerOrder = winnerOrder
     this._teams = {}
     teams.forEach(team => {
       this._teams[team.name] = team
     })
+    this.render()
   }
 
   getGroupName () {
@@ -64,5 +67,32 @@ export default class Group {
       default:
         break
     }
+  }
+
+  render () {
+    const teams = this.getTeams()
+    const cols = teams.map((team, i) => {
+      return `
+        <tr class='${i < this._winnerOrder ? 'success' : 'danger'}'>
+          <td>${i + 1}</td>
+          <td>
+            <img src='${team.logo}' width='40' />
+          </td>
+          <td>${team.name}</td>
+          <td class='text-center'>${team.win} - ${team.lose}</td>
+        </tr>
+      `
+    }).join('')
+
+    this._element.innerHTML = `
+      <table class="playoff-table">
+        <thead>
+          <tr>
+            <th colspan="4">${this._name}</th>
+          </tr>
+        </thead>
+        <tbody>${cols}</tbody>
+      </table>
+    `
   }
 }

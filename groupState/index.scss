@@ -1,7 +1,17 @@
 @import "variable.scss";
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
 
 .playoff-table {
+  font-family: 'Roboto', sans-serif;
   border-collapse: collapse;
+
+  img {
+    display: inline-block;
+  }
+
+  .text-center {
+    text-align: center;
+  }
 
   tr {
     background-color: $grayPrimary;
@@ -17,6 +27,7 @@
   tr > td,
   * > tr > th,
   * > tr > td {
+    vertical-align: middle;
     border: 1px solid $grayTertiary;
     padding: 0.2em 0.4em;
   }
