@@ -38,7 +38,6 @@ export default class Group {
     teams.forEach(team => {
       this._teams[team.name] = team
     })
-    this.render()
   }
 
   getGroupName () {
