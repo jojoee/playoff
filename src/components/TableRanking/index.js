@@ -42,8 +42,8 @@ class TableRanking {
 }
 
 const Renderer = (element, options) => {
-  const groupTable = new TableRanking(element, options.name, options.winnerOrder, options.teams)
-  groupTable.render()
+  const component = new TableRanking(element, options.name, options.winnerOrder, options.teams)
+  component.render()
 }
 
 export default Renderer
