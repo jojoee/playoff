@@ -1,6 +1,7 @@
-import Team from '../src/Team'
+import Team from '../../services/Team'
+import './index.scss'
 
-export default class GroupTable {
+class GroupTable {
   constructor (element, name = '', winnerOrder, teams = []) {
     this.element = element
     this.name = name
@@ -11,19 +12,7 @@ export default class GroupTable {
     })
   }
 
-  getTeams () {
-    const teams = Object.keys(this.team).map(key => this.teams[key])
-    return teams.sort((a, b) => {
-      // score index 0 should have. because we already create at constructor.
-      const aScoreKey = Object.keys(a.score)[0]
-      const bScoreKey = Object.keys(b.score)[0]
-
-      return b.score[bScoreKey].win - a.score[aScoreKey].win
-    })
-  }
-
   render () {
-    // const teams = this.getTeams()
     const teams = Object.keys(this.team).map(key => this.team[key])
     const cols = teams.map(({ name, logo, score }, i) => {
       const scoreKey = Object.keys(score)[0]
@@ -51,3 +40,10 @@ export default class GroupTable {
     `
   }
 }
+
+const Renderer = (element, options) => {
+  const groupTable = new GroupTable(element, options.name, options.winnerOrder, options.teams)
+  groupTable.render()
+}
+
+export default Renderer
