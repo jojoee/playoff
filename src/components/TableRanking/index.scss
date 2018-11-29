@@ -1,14 +1,13 @@
 @import "variable.scss";
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
 
-.playoff-table {
+.playoff-table-ranking {
   font-family: 'Roboto', sans-serif;
   border-collapse: collapse;
 
   img {
     display: inline-block;
-    width: 40px;
-    height: 40px;
+    width: 30px;
   }
 
   .text-center {
@@ -32,7 +31,6 @@
     vertical-align: middle;
     border: 1px solid $grayTertiary;
     padding: 0.2em 0.4em;
-    min-height: 40px;
-    max-height: 40px;
+    height: 30px;
   }
 }

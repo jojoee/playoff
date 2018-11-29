@@ -1,7 +1,7 @@
 import Team from '../../services/Team'
 import './index.scss'
 
-class GroupTable {
+class TableRanking {
   constructor (element, name = '', winnerOrder, teams = []) {
     this.element = element
     this.name = name
@@ -29,7 +29,7 @@ class GroupTable {
     }).join('')
 
     this.element.innerHTML = `
-      <table class="playoff-table">
+      <table class="playoff-table-ranking">
         <thead>
           <tr>
             <th colspan='4'>${this.name}</th>
@@ -42,7 +42,7 @@ class GroupTable {
 }
 
 const Renderer = (element, options) => {
-  const groupTable = new GroupTable(element, options.name, options.winnerOrder, options.teams)
+  const groupTable = new TableRanking(element, options.name, options.winnerOrder, options.teams)
   groupTable.render()
 }
 
