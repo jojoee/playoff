@@ -4,7 +4,7 @@
 [![Dependency Status](https://david-dm.org/jojoee/playoff.svg)](https://david-dm.org/jojoee/playoff) 
 [![Codecov](https://img.shields.io/codecov/c/github/jojoee/playoff.svg)](https://codecov.io/github/jojoee/playoff)
 [![Version - npm](https://img.shields.io/npm/v/playoff.svg)](https://www.npmjs.com/package/playoff)
-[![License - npm](https://img.shields.io/npm/l/playoff.svg)](http://opensource.org/licenses/MIT)
+[![License - npm](https://img.shields.io/npm/l/playoff.svg)](http://opensource.org/licenses/MIT) [![Greenkeeper badge](https://badges.greenkeeper.io/jojoee/playoff.svg)](https://greenkeeper.io/)
 
 ## Getting Started
 
